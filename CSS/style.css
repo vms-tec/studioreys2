@@ -199,6 +199,7 @@ h1, h2, h3 {
     align-items: center;
     perspective: 1000px; /* Habilita o espaço 3D para o efeito tectónico interativo */
     width: 100%;
+    max-width: 230px; /* Limita a largura da imagem para manter o formato oval */
     margin: 10px 0;
 }
 
@@ -214,7 +215,7 @@ h1, h2, h3 {
 /* Formato Oval Perfeito (Egg-shape) como na Image.jfif */
 .tectonic-image {
     width: 100%;
-    height: 380px; /* Altura ideal para formar o oval */
+    height: 350px; /* Altura ideal para formar o oval */
     object-fit: cover;
     border-radius: 140px / 190px; /* Cria o raio oval proporcional */
     border: 2px solid #dfba7c;
