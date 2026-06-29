@@ -183,6 +183,7 @@ h1, h2, h3 {
     letter-spacing: 1.5px;
     display: block;
     margin-bottom: 8px;
+    margin-top: -40px;
     font-weight: 500;
 }
 
@@ -191,6 +192,7 @@ h1, h2, h3 {
     line-height: 1.2;
     font-weight: 500;
     color: #ffffff;
+    margin-top: -10px;
 }
 
 .hero-image-centered-col {
@@ -200,7 +202,7 @@ h1, h2, h3 {
     perspective: 1000px; /* Habilita o espaço 3D para o efeito tectónico interativo */
     width: 100%;
     max-width: 230px; /* Limita a largura da imagem para manter o formato oval */
-    margin: 10px 0;
+    margin: -15px 0;
 }
 
 /* TECTONIC WRAPPER & ANIMATION */
