@@ -1,0 +1,539 @@
+/* ------------------------------------
+   CONFIGURAÇÕES GLOBAIS DO SITE
+------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave entre as secções */
+    scroll-padding-top: 80px; /* Evita que o menu fixo tape o título da secção */
+}
+
+body {
+    font-family: 'Inter', sans-serif;   
+    line-height: 1.6;
+    background: #0b0b0c;
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 5rem 7%; /* Reduzido o padding vertical para encurtar o site */
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+/* ------------------------------------
+   BARRA DE NAVEGAÇÃO FIXA E ACENTOS
+------------------------------------ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, rgba(18, 15, 12, 0.97) 0%, rgba(11, 11, 12, 0.98) 100%); /* Fundo escuro enriquecido com toque sutil de bronze e ouro */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(198, 164, 106, 0.15);
+    box-shadow: 0 4px 20px rgba(198, 164, 106, 0.08); /* Sombra dourada suave */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    z-index: 9999;
+}
+
+/* Linha de brilho metálico dourado na base do menu (fio de ouro escovado) */
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 5%, #dfba7c 25%, #f5dec1 50%, #dfba7c 75%, transparent 95%);
+}
+
+.navbar .logo {
+    color: #dfba7c;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(223, 186, 124, 0.2);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+    padding: 6px 0;
+}
+
+.nav-menu a:hover {
+    color: #dfba7c;
+}
+
+/* Linha interativa e sofisticada sob os links */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #dfba7c, #f5dec1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Ícone de Menu Hambúrguer (Mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.menu-toggle .bar {
+    height: 2px;
+    width: 100%;
+    background-color: #dfba7c;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+/* Animação do Hambúrguer para "X" */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ------------------------------------
+   ESTRUTURA DA TELA INICIAL (HERO TOTALMENTE CENTRALIZADA)
+------------------------------------ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(11, 11, 12, 0.8), rgba(11, 11, 12, 0.8)), url('Imagens/fundo.jpg') no-repeat center center/cover;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1; /* Fica acima do fundo de mármore */
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente todos os filhos */
+    gap: 30px;
+    text-align: center; /* Centraliza todo o texto */
+}
+
+.hero-header {
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #dfba7c;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.hero-image-centered-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Habilita o espaço 3D para o efeito tectónico interativo */
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* TECTONIC WRAPPER & ANIMATION */
+.tectonic-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Largura controlada para o formato oval */
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+
+/* Formato Oval Perfeito (Egg-shape) como na Image.jfif */
+.tectonic-image {
+    width: 100%;
+    height: 380px; /* Altura ideal para formar o oval */
+    object-fit: cover;
+    border-radius: 140px / 190px; /* Cria o raio oval proporcional */
+    border: 2px solid #dfba7c;
+    box-shadow: 0 0 30px rgba(198, 164, 106, 0.35);
+    display: block;
+    backface-visibility: hidden;
+    animation: floatingTectonic 6s ease-in-out infinite;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Levitação e leve balanço tectónico contínuo */
+@keyframes floatingTectonic {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        box-shadow: 0 0 30px rgba(198, 164, 106, 0.35);
+    }
+    50% {
+        transform: translateY(-12px) rotate(1deg) scale(1.02);
+        box-shadow: 0 0 45px rgba(198, 164, 106, 0.55);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        box-shadow: 0 0 30px rgba(198, 164, 106, 0.35);
+    }
+}
+
+.hero-text-centered p {
+    font-size: 1rem;
+    color: #d8cfc5;
+    line-height: 1.5;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.hero-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ------------------------------------
+   BOTÃO PREMIUM ESTILO CANVA (STANDARDIZADO)
+------------------------------------ */
+.gold-premium-btn, .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 480px; /* Botão mais robusto e alongado */
+    height: 54px;   
+    background: linear-gradient(135deg, #dfba7c 0%, #c6a46a 30%, #f5dec1 50%, #c6a46a 70%, #dfba7c 100%);
+    background-size: 200% auto;
+    color: #161616 !important;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 30px rgba(198, 164, 106, 0.35);
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    animation: shimmerEffect 4s linear infinite;
+    cursor: pointer;
+}
+
+.gold-premium-btn:hover, .btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(198, 164, 106, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.gold-premium-btn i, .btn i {
+    margin-right: 8px; /* Espaço para os ícones */
+}
+
+@keyframes shimmerEffect {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Brilho que passa pelo botão */
+.gold-premium-btn::after, .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+    transition: 0.75s;
+}
+
+.gold-premium-btn:hover::after, .btn:hover::after {
+    left: 150%;
+}
+
+/* ------------------------------------
+   GRELHAS DE SERVIÇO E ELEMENTOS
+------------------------------------ */
+/* Grelha de 2 em 2 para Massoterapia e Estética */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Força a exibição de 2 em 2 colunas */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Coluna Única (Um por Um) para as outras secções */
+.cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+    max-width: 800px; /* Mantém a leitura focada e elegante */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    background: rgba(15, 15, 15, 0.65); /* Fundo semi-transparente para o efeito de vidro */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px;
+    border: 1px solid rgba(198, 164, 106, 0.35);
+    transition: 0.5s;
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém os botões/preços alinhados no fundo */
+}   
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #c6a46a;
+    background: rgba(15, 15, 15, 0.8);
+    box-shadow: 0 10px 25px rgba(198, 164, 106, 0.15);
+}
+
+.price {
+    font-size: 1.3rem;
+    color: #c6a46a;
+    margin: 15px 0 0 0;
+    font-weight: 600;
+}
+
+/* ------------------------------------
+   OPÇÕES MOBILE E RESPONSIVIDADE
+------------------------------------ */
+@media (max-width: 768px) {
+    /* Menu Hambúrguer Ativo */
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido fora do ecrã */
+        width: 70%;
+        height: 100vh;
+        background: rgba(11, 11, 12, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        border-left: 1px solid rgba(198, 164, 106, 0.2);
+    }
+
+    .nav-menu.active {
+        right: 0; /* Desliza para dentro */
+    }
+
+    /* Tela Inicial (Hero) Lado a Lado Otimizada no Telemóvel */
+    .hero-body {
+        display: block; /* Desativa a grelha rígida */
+        width: 100%;
+    }
+    
+    .hero-text-col {
+        text-align: left;
+    }
+
+    .hero-image-col {
+        float: right; /* Flutua a imagem à direita */
+        width: 42%; /* Tamanho fluido */
+        max-width: 170px;
+        margin-left: 15px;
+        margin-bottom: 12px;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .hero h2 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 1.8rem; /* Legível e fluida */
+        margin-bottom: 15px;
+        text-align: center  ;
+        white-space: normal; /* Permite que o título quebre linha naturalmente */
+    }
+
+    .hero-text-col p {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        line-height: 1.45;
+    }
+
+    .gold-premium-btn, .btn {
+        width: 100%;
+        max-width: 320px;
+        height: 48px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Otimização dos cards em ecrãs pequenos (2 em 2 colunas) */
+@media (max-width: 550px) {
+    section {
+        padding: 4rem 5%; /* Ajusta o padding nas laterais no telemóvel */
+    }
+
+    .cards-grid {
+        gap: 12px; /* Reduz o espaço para caber melhor lado a lado */
+    }
+
+    .card {
+        padding: 15px 10px; /* Torna os cards mais compactos para não quebrar texto */
+    }
+
+    .card h3 {
+        font-size: 1rem; /* Diminui tamanho dos títulos nos cards */
+    }
+
+    .card p {
+        font-size: 0.8rem; /* Ajusta tamanho da descrição */
+        line-height: 1.4;
+    }
+
+    .price {
+        font-size: 1rem; /* Preço ligeiramente menor para encaixar em 2 colunas */
+    }
+
+}
+/* CONTAINER INTELIGENTE PARA OS BOTÕES DE LOCALIZAÇÃO */
+.location-buttons-container {
+    display: flex;
+    flex-direction: column; /* Empilhados por padrão no mobile */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .location-buttons-container {
+        flex-direction: row; /* Lado a lado em ecrãs maiores */
+        gap: 20px;
+    }
+}
+
+/* ------------------------------------
+   PARALLAX DO MÁRMORE NO BACKGROUND
+------------------------------------ */
+.fundo{
+    background-image: url('marmore.png') !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.dark-section {
+    background-color: transparent; /* Permite ver o mármore fluindo por trás */
+}
+
+.section-title {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: transparent;
+    border-top: 1px solid rgba(198, 164, 106, 0.15);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
