@@ -178,17 +178,17 @@ h1, h2, h3 {
 
 .hero-subtitle {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: #dfba7c;
     letter-spacing: 1.5px;
     display: block;
     margin-bottom: 8px;
-    margin-top: -40px;
+    margin-top: -10px;
     font-weight: 500;
 }
 
 .hero-title {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     font-weight: 500;
     color: #ffffff;
@@ -245,7 +245,7 @@ h1, h2, h3 {
 }
 
 .hero-text-centered p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #d8cfc5;
     line-height: 1.5;
     max-width: 680px;
@@ -404,23 +404,20 @@ h1, h2, h3 {
         width: 100%;
     }
     
-    .hero-text-col {
-        text-align: left;
-    }
 
     .hero-image-col {
         float: right; /* Flutua a imagem à direita */
-        width: 42%; /* Tamanho fluido */
-        max-width: 150px;
+        width: 30%; /* Tamanho fluido */
+        max-width: 100px;
         margin-left: 15px;
         margin-bottom: 5px;
-        margin-top: -10px;
+        margin-top: -15px;
         display: block;
     }
 
     .hero h2 {
-        font-size: 0.9rem;
-        margin-bottom: 5px;
+        font-size: 0.2rem;
+        margin-bottom: -15px;
     }
 
     .hero-subtitle {
@@ -430,22 +427,23 @@ h1, h2, h3 {
 
     .hero-title {
         font-size: 1.5rem; /* Legível e fluida */
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         text-align: center  ;
         white-space: normal; /* Permite que o título quebre linha naturalmente */
     }
 
     .hero-text-col p {
-        font-size: 0.5rem;
-        margin-bottom: 10px;
+        font-size: 0.3rem;
+        margin-bottom: -15px;
         line-height: 1.45;
     }
 
     .gold-premium-btn, .btn {
         width: 100%;
-        max-width: 320px;
+        max-width: 250px;
         height: 48px;
         font-size: 0.85rem;
+        margin: -10px auto; /* Centraliza o botão no mobile */
     }
 }
 
