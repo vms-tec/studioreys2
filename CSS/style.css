@@ -411,10 +411,10 @@ h1, h2, h3 {
     .hero-image-col {
         float: right; /* Flutua a imagem à direita */
         width: 42%; /* Tamanho fluido */
-        max-width: 170px;
+        max-width: 150px;
         margin-left: 15px;
-        margin-bottom: 12px;
-        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-top: -10px;
         display: block;
     }
 
@@ -429,15 +429,15 @@ h1, h2, h3 {
     }
 
     .hero-title {
-        font-size: 1.8rem; /* Legível e fluida */
-        margin-bottom: 15px;
+        font-size: 1.5rem; /* Legível e fluida */
+        margin-bottom: 10px;
         text-align: center  ;
         white-space: normal; /* Permite que o título quebre linha naturalmente */
     }
 
     .hero-text-col p {
-        font-size: 0.85rem;
-        margin-bottom: 20px;
+        font-size: 0.5rem;
+        margin-bottom: 10px;
         line-height: 1.45;
     }
 
